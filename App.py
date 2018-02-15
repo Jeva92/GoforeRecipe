@@ -7,7 +7,7 @@ from Recipes.Recipe import Recipe
 
 Recipes = []
 
-recipe_data=json.load(open('recipes.json'))
+recipe_data = json.load(open('recipes.json'))
 
 for i in recipe_data:
     Recipes.append(Recipe(i).__dict__)
@@ -36,7 +36,7 @@ def recipe(name):
         for i in Recipes:
             if i["name"] == name:
                 Recipes.remove(i)
-                abort(200)
+                return abort(200)
         return abort(404)
 
 @app.route('/ingredient/<name>', methods=['GET'])
@@ -45,7 +45,6 @@ def ingredient(name):
     for i in Recipes:
         for ii in i["ingredients"]:
             if ii["name"] == name:
-                print i
                 data.append(i)
     if len(data) < 1:
         return abort(404)
