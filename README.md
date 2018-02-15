@@ -18,16 +18,16 @@ PC:~$: flask run
 ```
 The app will run in http://localhost:5000
 
-# API
+## API
 
-##GET /recipes
+### GET /recipes  
 Return all the recipes in the app
 
-##GET /recipe/<name>
-Return recipe with <name>
+### GET /recipe/\<name\>  
+Return recipe with \<name\>
 
-##DELETE /recipe/<name>
-Deletes recipe with <name>
+### DELETE /recipe/\<name\>  
+Deletes recipe with \<name\>
 
-##POST /recipe
-Add a new reciped. Assumes the body of the request is valid type os Recipe
+### POST /recipe  
+Add a new recipe. Assumes the body of the request is valid type os Recipe
