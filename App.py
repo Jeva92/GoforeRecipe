@@ -3,7 +3,7 @@ import json
 from flask import Flask
 from flask import request
 from flask import abort
-from Recipe import Recipe
+from Recipes.Recipe import Recipe
 
 Recipes = []
 
