@@ -21,13 +21,16 @@ The app will run in http://localhost:5000
 ## API
 
 ### GET /recipes  
-Return all the recipes in the app
+Return all the recipe names
 
 ### POST /recipes  
-Add a new recipe. Assumes the body of the request is valid type os Recipe
+Add a new recipe. Assumes the body of the request is valid type of Recipe
 
 ### GET /recipe/\<name\>  
 Return recipe with \<name\>
 
 ### DELETE /recipe/\<name\>  
 Deletes recipe with \<name\>
+
+### GET /ingredient/\<name\>  
+Get recipes with ingredient with \<name\>  

@@ -17,10 +17,13 @@ app = Flask(__name__)
 @app.route('/recipes', methods=['GET', 'POST'])
 def recipes():
     if request.method == 'GET':
-        return json.dumps(Recipes)
+        data = []
+        for i in Recipes:
+            data.append(i["name"])
+        return json.dumps(data)
     elif request.method == 'POST':
         Recipes.append(json.load(request.body).__dict__)
-        return abort (200)
+        return abort(200)
 
 @app.route('/recipe/<name>', methods=['GET', 'DELETE'])
 def recipe(name):
@@ -35,3 +38,16 @@ def recipe(name):
                 Recipes.remove(i)
                 abort(200)
         return abort(404)
+
+@app.route('/ingredient/<name>', methods=['GET'])
+def ingredient(name):
+    data = []
+    for i in Recipes:
+        for ii in i["ingredients"]:
+            if ii["name"] == name:
+                print i
+                data.append(i)
+    if len(data) < 1:
+        return abort(404)
+    else:
+        return json.dumps(data)
