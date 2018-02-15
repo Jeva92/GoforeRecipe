@@ -6,8 +6,8 @@ class Recipe:
         self.name = data["name"]
         self.instructions = data["instructions"]
         self.ingredients = []
-        for ii in data["ingredients"]:
-            self.ingredients.append(Ingredient(ii).__dict__)
+        for i in data["ingredients"]:
+            self.ingredients.append(Ingredient(i).__dict__)
 
     def get(self):
         return self.__dict__

@@ -9,8 +9,8 @@ Recipes = []
 
 recipe_data=json.load(open('recipes.json'))
 
-for ii in recipe_data:
-    Recipes.append(Recipe(ii).__dict__)
+for i in recipe_data:
+    Recipes.append(Recipe(i).__dict__)
 
 app = Flask(__name__)
 
