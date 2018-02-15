@@ -29,13 +29,10 @@ def recipes():
 @app.route('/recipe/<name>', methods=['GET', 'DELETE'])
 def recipe(name):
     if request.method == 'GET':
-        if name == '':
-            return json.dumps(Recipes)
-        else:
-            for i in Recipes:
-                if i["name"] == name:
-                    return json.dumps(i)
-            return abort(404)
+        for i in Recipes:
+            if i["name"] == name:
+                return json.dumps(i)
+        return abort(404)
     elif request.method == 'DELETE':
         for i in Recipes:
             if i["name"] == name:
