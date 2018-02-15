@@ -19,8 +19,7 @@ def recipes():
     if request.method == 'GET':
         return json.dumps(Recipes)
     elif request.method == 'POST':
-        Recipes.append(json.load(request.body))
-        Recipes[-1] = Recipes[-1].__dict__
+        Recipes.append(json.load(request.body).__dict__)
         return abort (200)
 
 @app.route('/recipe/<name>', methods=['GET', 'DELETE'])
