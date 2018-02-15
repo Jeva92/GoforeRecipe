@@ -8,6 +8,3 @@ class Recipe:
         self.ingredients = []
         for i in data["ingredients"]:
             self.ingredients.append(Ingredient(i).__dict__)
-
-    def get(self):
-        return self.__dict__
